@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<doc>
+    <meta>
+        <title>TPC1: Exemplo</title>
+        <date>2024-02-06</date>
+        <author>
+            <id>a100066</id>
+            <nome>Ricardo Miguel Queirós de Jesus<nome>
+        </author>
+        <uc>
+            <sigla>EW2024</sigla>
+            <nome>Engenharia Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>Primeiro Parágrafo</p>
+        <p>Segundo Parágrafo</p>
+        <p>Terceiro Paragrafo com <url>link</url>url embutido</p>
+    </resumo>
+</doc>
