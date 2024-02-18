@@ -21,7 +21,7 @@ html = '''
 template = html
 
 def percorrer_pastaXML(directory):
-    ruas = set() # usei set para não haver ruas duplicadas
+    ruas = set()
     
     for filename in os.listdir(directory):
         if filename.endswith('.xml'): 
@@ -111,7 +111,7 @@ def percorrer_pastaXML(directory):
     return sorted(ruas)
 
 
-pasta_xmlInfo = './MapaRuas-materialBase/texto'
+pasta_xmlInfo = os.path.join(os.path.dirname(__file__), 'MapaRuas-materialBase', 'texto')
 
 ruas = percorrer_pastaXML(pasta_xmlInfo)
 
