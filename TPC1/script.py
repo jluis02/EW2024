@@ -2,21 +2,20 @@ import os
 import xml.etree.ElementTree as ET
 
 html = '''
-<!DOCTYPE html>
-<html>
-<head>
-    <title>EngWeb2024</title>
-    <meta charset="UTF-8">
-    <style>
-        img {
-            max-width: 60%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
-            height: auto; /* Mantém a proporção da imagem */
-        }
-    </style>
-</head>
-<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>EngWeb2024</title>
+        <meta charset="UTF-8">
+        <style>
+            img {
+                max-width: 60%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+                height: auto; /* Mantém a proporção da imagem */
+            }
+        </style>
+    </head>
+    <body>
 '''
-# templateCidade += f"<h6><a href='../mapa_sorted_linked.html'>Voltar</a></h6>"
 
 template = html
 
@@ -30,8 +29,8 @@ def percorrer_pastaXML(directory):
             
             rua_nome = None
             imagens = []
-            descricao = [] # Lista para armazenar as descrições
-            casas = [] # Lista para armazenar as informações das casas
+            descricao = []
+            casas = []
             
             html_rua = template
             
@@ -41,7 +40,7 @@ def percorrer_pastaXML(directory):
                 
             for figura in root.iter('figura'):
                 imagem_path = figura.find('imagem').attrib['path']
-                imagem_path = f"../MapaRuas-materialBase/texto/{imagem_path}"
+                imagem_path = os.path.join('..', 'MapaRuas-materialBase', 'texto', imagem_path)
                 imagens.append(imagem_path)
             
             if rua_nome:
@@ -123,9 +122,7 @@ for rua in ruas:
     
     html += f"<li><a href='html/{rua}.html'>{rua}</a></li>"
     
-html += "</ul>"
-html += "</body>"
-html += "</html>"
+html += "</ul>\n</body>\n</html>"
 
 file = open("ruas.html", "w", encoding="utf-8")
 file.write(html)
