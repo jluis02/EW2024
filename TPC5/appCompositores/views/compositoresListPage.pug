@@ -1,0 +1,27 @@
+extends layout 
+
+block content
+    .w3-card-4
+            header.w3-container.w3-teal
+                h1
+                    span #{title}
+                    |
+                    a.w3-btn.w3-round.w3-grey(href="/compositores/add") +
+            .w3-container
+                table.w3-table-all
+                    tr
+                        th id
+                        th nome
+                        th Actions
+                    each item in Compositores
+                        tr
+                            td= item.id
+                            td
+                                a(href=`/compositores/${item.id}`)= item.nome
+                            td
+                                span [
+                                    a(href=`/compositores/edit/${item.id}`) Edit
+                                span ]
+                                span [
+                                    a(href=`/compositores/delete/${item.id}`) Delete
+                                span ]

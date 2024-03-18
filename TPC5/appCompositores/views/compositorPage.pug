@@ -1,0 +1,23 @@
+extends layout 
+
+block content
+    .w3-card-4
+            header.w3-container.w3-teal
+                h1 #{compositor.nome}
+            .w3-container
+                ul.w3-ul.w3-card-4
+                    li 
+                        strong Nome: 
+                        | #{compositor.nome}
+                    li 
+                        strong Bio: 
+                        | #{compositor.bio}
+                    li 
+                        strong Data de Nascimento: 
+                        | #{compositor.dataNasc}
+                    li 
+                        strong Data de Obito: 
+                        | #{compositor.dataObito}
+                    li 
+                        strong Periodo: 
+                        | #{compositor.periodo}
